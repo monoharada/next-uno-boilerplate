@@ -7,7 +7,7 @@
     }
   },
   "lint-staged": {
-    "{components,app,pages}/**/*.{ts,tsx}": "npm run fix:lint"
+    "./**/*.*": "npm run fmt:precommit"
   },
   "scripts": {
     "dev": "next dev",
@@ -16,7 +16,7 @@
     "lint": "next lint",
     "fix:lint": "next lint --fix",
     "lint:precommit": "eslint './{components,app,pages,styles}/**/*.{ts,tsx}' --max-warnings 0",
-    "fmt:precommit": "prettier -l './**/*.{js,jsx,ts,tsx,json,css,scss}'"
+    "fmt:precommit": "prettier --write **/*.*"
   },
   "dependencies": {
     "@typescript-eslint/utils": "^5.40.0",

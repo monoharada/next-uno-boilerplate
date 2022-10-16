@@ -1,8 +1,8 @@
-import '@unocss/reset/tailwind.css';
-import 'uno.css';
-import '@/styles/root.css';
+import "@unocss/reset/tailwind.css";
+import "uno.css";
+import "@/styles/root.css";
 
-import type { AppProps } from 'next/app';
+import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
