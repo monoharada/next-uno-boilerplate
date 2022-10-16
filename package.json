@@ -15,9 +15,8 @@
     "start": "next start",
     "lint": "next lint",
     "fix:lint": "next lint --fix",
-    "lint:precommit": "eslint './{components,app,pages,styles}/**/*.{ts,tsx}' --max-warnings 0",
-    "fmt:precommit": "prettier --write **/*.*",
-    "precommit": "pnpm fix:lint && pnpm  fmt:precommit"
+    "fmt": "prettier --write **/*.*",
+    "precommit": "pnpm fix:lint && pnpm fmt"
   },
   "dependencies": {
     "@typescript-eslint/utils": "^5.40.0",
