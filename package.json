@@ -7,7 +7,7 @@
     }
   },
   "lint-staged": {
-    "components/**/*.*": "npx next lint --fix & npx prettier --write **/*.*"
+    "{components,app,pages,styles}/**/*.*": "npx next lint --fix & npx prettier --write **/*.*"
   },
   "scripts": {
     "dev": "next dev",
