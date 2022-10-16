@@ -7,8 +7,7 @@
     }
   },
   "lint-staged": {
-    "{components,app,pages}/**/*.{ts,tsx}": "npm run fix:lint",
-    "{components,app,pages,styles}/**/*.{ts,tsx,css,json}": "npm run fmt:precommit"
+    "{components,app,pages}/**/*.{ts,tsx}": "npm run fix:lint"
   },
   "scripts": {
     "dev": "next dev",
