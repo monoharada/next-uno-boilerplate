@@ -37,9 +37,29 @@
       {
         "zones": [
           {
-            "from": "./components/ui",
-            "target": "./pages",
-            "message": "uiコンポーネントをそのままpagesにimportしないでね"
+            "from": "./components/atomic/",
+            "target": "./components/atomic/(index.ts)",
+            "message": "atomicのなかでatomicを呼ぶ事はできません。"
+          },
+          {
+            "from": "./components/common/**/*",
+            "target": "./components/!(layout|common)/**/*",
+            "message": "commonコンポーネントはlayout内で読み込みましょう"
+          },
+          {
+            "from": "./components/common/**/*",
+            "target": "./components/common/**/!(index.ts)",
+            "message": "commonコンポーネントはlayout内で読み込みましょう"
+          },
+          {
+            "from": "./components/common/**/*",
+            "target": "./pages/**/*",
+            "message": "commonコンポーネントはlayout内で読み込みましょう"
+          },
+          {
+            "from": "./components/common/**/*",
+            "target": "./app/**/*",
+            "message": "commonコンポーネントはlayout内で読み込みましょう"
           }
         ]
       }

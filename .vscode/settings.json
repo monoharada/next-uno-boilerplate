@@ -13,7 +13,7 @@
   "files.exclude": {
     // 通常時はファイルを隠蔽する
     "**/node_modules": true,
-    "**/.eslintrc.json": true,
+    // "**/.eslintrc.json": true,
     "**/next-env.d.ts": true
   },
   "cSpell.words": ["Attributify"]

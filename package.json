@@ -16,7 +16,8 @@
     "lint": "next lint",
     "fix:lint": "next lint --fix",
     "fmt": "prettier --write **/*.*",
-    "precommit": "pnpm fix:lint && pnpm fmt"
+    "precommit": "pnpm fix:lint && pnpm fmt",
+    "generate": "npx scaffdog generate"
   },
   "dependencies": {
     "@typescript-eslint/utils": "^5.40.0",
@@ -48,6 +49,7 @@
     "eslint-config-next": "12.3.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "scaffdog": "^2.4.0",
     "typescript": "4.8.4",
     "unocss": "0.45.29"
   }
