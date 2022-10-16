@@ -2,8 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 
-import TopCard from "@/app/top/TopCard";
-
 import Navbar from "../components/navbar";
 
 const Home: NextPage = () => {
@@ -34,7 +32,7 @@ const Home: NextPage = () => {
         <relative>
           <btn-01 class="absolute">aaa</btn-01>
         </relative>
-        <TopCard />
+        {/* <TopCard /> */}
       </main>
     </>
   );
