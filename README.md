@@ -1,122 +1,95 @@
 # Getting Started with UnoCSS and Nextjs
 
-## Configuration 
+## Configuration
 
-#### 1. Installing the dependencies:
+#### 1. Installing :
+
+node 16.5.0
 
 ```bash
-npm i -D unocss @unocss/webpack
+pnpm i
 ```
 
-<br>
+#### 2. develop :
 
-#### 2. Add `unocss.config.ts` in the root of your project
-
-```ts
-// unocss.config.ts
-import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts } from 'unocss'
-
-export default defineConfig({
-  presets: [
-    presetUno(),
-    // ...
-  ],
-})
- ```
-
-#### 3. Add unocss as plugin to webpack through your `next.config.js`
-
-```js
-// next.config.js
-
-const UnoCSS = require('@unocss/webpack').default
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  webpack: (config) => {
-    config.plugins.push(
-      UnoCSS(), // <--
-    )
-    return config
-  },
-}
-
-module.exports = nextConfig
+```bash
+pnpm dev
 ```
 
-<br>
+## concept
 
-#### 4. import `uno.css` in `_app.tsx`
+- atomic : html タグの拡張
+- ui : atomic を組み合わせたもの
+- common : サイト全体で使われるパーツ
+- layout : 主に common を組み合わせる場所
+- app : page 固有の部分。紐づく model(データ等)ファイルを持つ。ループ処理は主にここで
+- pages : ページ。data fetch, app,layout を組み合わせる場所
 
-```tsx
-// _app.tsx
-import '@unocss/reset/tailwind.css'
-import 'uno.css'
+atomic > ui > app > pages
+atomic > common > layout > pages
 
-import type { AppProps } from 'next/app'
+## Usage
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
-
-export default MyApp
-```
-
-
-## Usage 
-
-Style your components with unocss!
+pages/
 
 ```tsx
 /* index.tsx */
-const Home: NextPage = () => {
+import type { ReactElement } from 'react'
+import App from '@/components/app/Home
+import Layout from '@/components/layout'
+
+import type { NextPageWithLayout } from '@/pages/_app'
+
+const Page: NextPageWithLayout = () => {
+  return <App />
+}
+
+Page.getLayout = function getLayout(page: ReactElement) {
   return (
-    <>
-      <main className="py-20 px-12 text-center flex flex-col items-center gap-20px">
-        <span text="blue 5xl hover:red" cursor="default">Nextjs</span>
-        <div className="i-carbon-car inline-block" text="4xl" />
-        <button className="btn w-10rem">Button</button>
-      </main>
-    </>
+    <Layout>
+      {page}
+    </Layout>
   )
 }
+
+export default Page
+
+
+
+```
+
+components/\*\*
+
+スタイリングについてはclassNameよりも属性値で設定することを推奨します。
+
+```jsx
+const Component = ({xxx,xxxx}:Props) => {
+  return (
+    <>
+
+        <span text='blue 5xl hover:red' cursor='default'>
+          Nextjs
+        </span>
+        <div className='i-carbon-car inline-block' text='4xl' />
+        <flex gap-8>
+          <button w='w-10rem' className='btn'>Button 1</button>
+         <button w=' w-10rem'className='btn'>Button 2</button>
+        </flex>
+    </flex>
+  );
+};
 ```
 
 <br>
 
-## Hot Module Reload 
-To support HMR you have to opt-out of webpacks caching.
+## scaffold
 
-```diff
-// next.config.js
-
-const nextConfig = {
-  reactStrictMode: true,
-  webpack: (config) => {
-+   config.cache = false
-    config.plugins.push(
-      UnoCSS({
-        //...
-      })
-    )
-    return config
-  }
-}
-```
-<br>
-
-## Troubleshooting
-
-#### Error concerning virtual module
+コンポーネントを作成する場合は npm scripts から作成可能です。
 
 ```bash
-Error: ENOENT: no such file or directory, open '.../_virtual_/__uno.css'
+
+pnpm generate
+
+# 対話形式で作成してください。
+
 ```
-
-try deleting the `.next` directory and restart the dev server.
-
-#### Other
-
-- you might need to bump your target up to at least `es2015` in your `tsconfig.json` to build your project
-- files with `.js` extension are not supported by default. Change your file extensions to `.jsx` or try to include js files in your config with `include: /\.js$/`. [Learn more](https://github.com/unocss/unocss#scanning).

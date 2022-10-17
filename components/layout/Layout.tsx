@@ -1,14 +1,7 @@
 import { ReactElement } from "react";
 
-import { Header } from "@/components/common/Header";
-
 type LayoutProps = Required<{
   readonly children: ReactElement;
 }>;
 
-export const Layout = ({ children }: LayoutProps) => (
-  <>
-    <Header />
-    {children}
-  </>
-);
+export const Layout = ({ children }: LayoutProps) => <>{children}</>;

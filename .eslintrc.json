@@ -38,8 +38,23 @@
         "zones": [
           {
             "from": "./components/atomic/",
-            "target": "./components/atomic/(index.ts)",
+            "target": "./components/atomic/!(index.ts)",
             "message": "atomicのなかでatomicを呼ぶ事はできません。"
+          },
+          {
+            "from": "./components/layout/",
+            "target": "./components/ui",
+            "message": "uiのなかでatomic以外を呼ぶ事はできません。"
+          },
+          {
+            "from": "./components/common/",
+            "target": "./components/ui",
+            "message": "uiのなかでatomic以外を呼ぶ事はできません。"
+          },
+          {
+            "from": "./components/ui/",
+            "target": "./components/ui/!(index.ts)",
+            "message": "uiのなかでatomic以外を呼ぶ事はできません。"
           },
           {
             "from": "./components/common/**/*",

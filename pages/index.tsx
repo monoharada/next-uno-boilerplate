@@ -18,13 +18,13 @@ const Home: NextPage = () => {
         <span text="blue 5xl hover:red" cursor="default">
           Hello Next
         </span>
-        <div className="i-carbon-car inline-block" text="4xl teal-500" />
+        <div text="4xl teal-500 " className="i-carbon-car" />
 
         <Link href="/blog">
           <a className="btn-01 flex items-center">
-            <div bg="pink-500">
+            <div bg="pink-500" className="flex">
               Blog
-              <span>hoeg</span>
+              <span>hoge</span>
             </div>
             <div className="i-carbon-arrow-right" />
           </a>
