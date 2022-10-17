@@ -26,6 +26,7 @@ pnpm dev
 - pages : ページ。data fetch, app,layout を組み合わせる場所
 
 atomic > ui > app > pages
+
 atomic > common > layout > pages
 
 ## Usage
@@ -60,7 +61,7 @@ export default Page
 
 components/\*\*
 
-スタイリングについてはclassNameよりも属性値で設定することを推奨します。
+スタイリングについては className よりも属性値で設定することを推奨します。
 
 ```jsx
 const Component = ({xxx,xxxx}:Props) => {
