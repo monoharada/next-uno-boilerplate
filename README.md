@@ -27,7 +27,37 @@ pnpm dev
 
 atomic > ui > app > pages
 
-atomic > common > layout > pages
+common > layout > pages
+
+※原則同一ディレクトリ内で再度 import はしない
+
+```mermaid
+flowchart TB
+model1[(app_model)]
+model2[(api)]
+atomic --> ui
+atomic --> app
+atomic -. uiでも共有するatomic .-> common
+ui --> app
+app --> pages
+common --> layout
+layout --> pages
+ subgraph ループ処理等可能
+ app --> model1
+
+ model1 --> app
+ end
+ subgraph ロジックやコンテクスト入れて良い
+ common
+ end
+ subgraph ロジックやコンテクスト入れない
+ ui
+ end
+model2  --> pages
+pages --> model2
+
+
+```
 
 ## Usage
 
