@@ -1,24 +1,10 @@
-import type { NextPage } from "next";
-import Link from "next/link";
+import { NextPageWithLayout } from "next";
 
-import Navbar from "../../components/navbar";
+import BlogApp from "@/app/blog/app";
+import { Layout } from "@/components/layout/Layout";
 
-const Blog: NextPage = () => {
-  return (
-    <>
-      <Navbar />
-      <main className="flex flex-col items-center gap-20px px-12 py-20 text-center">
-        <h2 className="text-3xl font-bold text-green-900">Blog posts</h2>
+const Blog: NextPageWithLayout = () => <BlogApp />;
 
-        <Link href="/">
-          <a className="flex items-center btn">
-            <div className="i-carbon-arrow-left" />
-            Home
-          </a>
-        </Link>
-      </main>
-    </>
-  );
-};
+Blog.getLayout = (page) => <Layout>{page}</Layout>;
 
 export default Blog;
