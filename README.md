@@ -20,7 +20,10 @@ pnpm dev
 
 main > issue > feature/issueNUM > PR > main
 
-- issue には labels を付与してください
+- issue には labels を付与してください自動で branch が生成されます。
+  - 新規コーディング、追加コーディング > enhancement
+  - 修正 > bug
+  - ドキュメント、環境周り > document
 - issue は誰が対応する issue なのか明示してください（基本的に自分をアサインしてください。）
 
 微修正、bug fix,hot fix も PR が通ったブランチは捨てて新たな issue ブランチから対応してください。
