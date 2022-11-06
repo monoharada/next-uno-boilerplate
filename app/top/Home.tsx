@@ -10,14 +10,14 @@ const HomeApp = () => {
         {title}
       </span>
       <div bg="primary" text="4xl teal-500 " className="i-carbon-car" />
-      <Link href="/blog">
-        <a className="btn-01 flex items-center">
+      <Link href="/blog" className="btn-01 flex items-center">
+        <>
           <div bg="pink-500" className="flex">
             Blog
             <span>hoge</span>
           </div>
           <div className="i-carbon-arrow-right" />
-        </a>
+        </>
       </Link>
       <relative>
         <btn-01 class="absolute">aaa</btn-01>

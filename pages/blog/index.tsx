@@ -1,6 +1,6 @@
+import BlogApp from "app/blog/app";
 import { NextPageWithLayout } from "next";
 
-import BlogApp from "@/app/blog/app";
 import { Layout } from "@/components/layout/Layout";
 
 const Blog: NextPageWithLayout = () => <BlogApp />;

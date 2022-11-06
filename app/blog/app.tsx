@@ -8,14 +8,11 @@ const BlogApp = () => {
     <>
       <h2 className="text-3xl font-bold text-green-900">{title}</h2>
 
-      <Link href="/">
-        <a className="flex items-center btn">
-          <div className="i-carbon-arrow-left" />
-          Home
-        </a>
+      <Link href="/" className="flex items-center btn">
+        Home
       </Link>
       <p>{paragraph}</p>
-      <ul>
+      <ul className="flex flex-col items-center gap-4">
         {textArray.map((text) => (
           <li key={text}>{text}</li>
         ))}

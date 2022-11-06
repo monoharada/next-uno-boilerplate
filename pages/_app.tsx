@@ -1,5 +1,5 @@
 import "@unocss/reset/tailwind.css";
-import "uno.css";
+import "@/styles/uno.css";
 import "@/styles/root.css";
 
 import type { AppPropsWithLayout } from "next/app";
