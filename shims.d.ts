@@ -9,7 +9,13 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       [tagName: string]: HTMLAttributes | AttributifyAttributes;
-      "btn-01": HTMLAttributes | AttributifyAttributes;
     }
   }
 }
+
+// declare namespace JSX {
+//   interface IntrinsicElements {
+//     relative: any;
+//     'btn-01': any;
+//   }
+// }

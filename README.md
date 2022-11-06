@@ -4,7 +4,7 @@
 
 #### 1. Installing :
 
-node 16.5.0
+node > .node-version
 
 ```bash
 pnpm i
@@ -15,6 +15,26 @@ pnpm i
 ```bash
 pnpm dev
 ```
+
+## git flow
+
+main > issue > feature/issueNUM > PR > main
+
+- issue には labels を付与してください
+- issue は誰が対応する issue なのか明示してください（基本的に自分をアサインしてください。）
+
+微修正、bug fix,hot fix も PR が通ったブランチは捨てて新たな issue ブランチから対応してください。
+
+ブランチは常にリモートの main(場合によっては staging)から作成してください。
+
+## mode
+
+- npm run mode:focus
+  設定ファイルはすべて隠蔽される。コーディングに集中するモード
+- npm run mode:open
+  設定ファイルを修正・調整するモード
+
+commit した際に husky にて自動で mode:focus になります。
 
 ## concept
 
