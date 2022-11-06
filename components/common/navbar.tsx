@@ -15,7 +15,6 @@ const navigation = [
 function Navbar() {
   const router = useRouter();
   const style = (href: string) => (router.asPath === href ? current : other);
-
   return (
     <nav className="bg-teal-700 px-10">
       <div className="relative h-16 flex items-center justify-between">
