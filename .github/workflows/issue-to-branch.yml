@@ -1,0 +1,19 @@
+name: make branch from issue with label
+on:
+  issues:
+    types:
+      - labeled
+jobs:
+  auto-made-branch:
+    runs-on: ubuntu-latest
+
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      # ラベル名を取得する
+      - name: Get label name
+        id: label_name
+        run: |
+          echo ${{github.head_ref}}
