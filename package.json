@@ -6,20 +6,24 @@
       "pre-commit": "lint-staged"
     }
   },
-  "lint-staged": {
-    "{components,app,pages,styles}/**/*.*": "pnpm run precommit"
-  },
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "prepare": "husky install",
+    "dev": "npm run dev:css & next dev",
+    "build": "npm run build:css && next build",
     "start": "next start",
     "lint": "next lint",
     "fix:lint": "next lint --fix",
     "fmt": "prettier --write **/*.*",
-    "precommit": "pnpm fix:lint && pnpm fmt",
-    "generate": "npx scaffdog generate"
+    "precommit": "npm run fix:lint && npm run fmt",
+    "generate": "npx scaffdog generate",
+    "dev:css": "unocss '{app,components,pages}/**/*.{tsx,ts}' -o styles/uno.css --watch",
+    "build:css": "unocss './{app,components,pages}/**/*.{tsx,ts}' --out-file styles/uno.css",
+    "mode:open": "cp .vscode/settings_open.json .vscode/settings.json",
+    "mode:focus": "cp .vscode/settings_focus.json .vscode/settings.json"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "@typescript-eslint/utils": "^5.40.0",
     "@unocss/transformer-attributify-jsx": "^0.45.29",
     "eslint-config-prettier": "^8.5.0",
@@ -38,10 +42,13 @@
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.8",
+    "@iconify/json": "^2.1.133",
     "@types/node": "18.8.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "@unocss/cli": "^0.46.3",
     "@unocss/preset-attributify": "0.45.29",
+    "@unocss/preset-icons": "^0.46.3",
     "@unocss/preset-tagify": "0.45.29",
     "@unocss/reset": "0.45.29",
     "@unocss/webpack": "0.45.29",

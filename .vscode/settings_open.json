@@ -1,0 +1,20 @@
+{
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+    "source.addMissingImports": true
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "files.exclude": {
+    // 通常時はファイルを隠蔽する
+    //   "**/node_modules": true,
+    // "**/.eslintrc.json": true,
+    "**/next-env.d.ts": true
+  },
+  "cSpell.words": ["Attributify"]
+}

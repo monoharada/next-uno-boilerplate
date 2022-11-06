@@ -1,5 +1,7 @@
 {
+  "parser": "@typescript-eslint/parser",
   "plugins": [
+    "@typescript-eslint",
     "sort-keys-custom-order",
     "simple-import-sort",
     "import",
@@ -16,6 +18,10 @@
     "plugin:import/typescript"
   ],
   "rules": {
+    "prefer-const": "error",
+    "no-console": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
     // For JS objects sorting
     "sort-keys-custom-order/object-keys": [
       "error",
