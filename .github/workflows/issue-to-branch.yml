@@ -17,7 +17,7 @@ jobs:
         id: label_name
         run: |
           label_type=$(echo ${{ github.event.label.name}})
-          if [ $label_type == 'enhance' ]; then
+          if [ $label_type == 'enhancement' ]; then
             git switch -c feature/issue${{ github.event.issue.number }}
           # elif [ $branch_type == 'fix' ] || [ $branch_type == 'hotfix' ]; then
           #   label_name=$(echo "bug")
