@@ -16,4 +16,4 @@ jobs:
       - name: Get label name
         id: label_name
         run: |
-          echo hoge
+          echo {{ github.event.label.name}}
