@@ -16,4 +16,4 @@ jobs:
       - name: Get label name
         id: label_name
         run: |
-          echo ${{github.head_ref}}
+          echo hoge
