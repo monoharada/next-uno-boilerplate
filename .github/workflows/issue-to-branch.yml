@@ -10,7 +10,7 @@ jobs:
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: peterjgrainger/action-create-branch@v2.2.0
+      - uses: actions/checkout@v2
 
       # ラベル名を取得する
       - name: Get label name
@@ -18,7 +18,8 @@ jobs:
         run: |
           label_type=$(echo ${{ github.event.label.name}})
           if [ $label_type == 'enhancement' ]; then
-            branch:'feature/issue${{ github.event.issue.number }}'
+            git switch -c feature/issue${{ github.event.issue.number }}
+            git push -u origin feature/issue${{ github.event.issue.number }}
           # elif [ $branch_type == 'fix' ] || [ $branch_type == 'hotfix' ]; then
           #   label_name=$(echo "bug")
           # else
