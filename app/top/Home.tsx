@@ -13,7 +13,7 @@ const HomeApp = () => {
       <Link href="/blog" className="btn-01 flex items-center">
         <>
           <div bg="pink-500" className="flex">
-            Blog
+            Blog!!!
             <span>hoge</span>
           </div>
           <div className="i-carbon-arrow-right" />
